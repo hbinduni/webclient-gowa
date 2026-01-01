@@ -7,7 +7,8 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "maxSize": 2097152
+    "maxSize": 2097152,
+    "includes": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "**/*.json", "**/*.css"]
   },
   "formatter": {
     "enabled": true,
@@ -32,7 +33,11 @@
   },
   "css": {
     "parser": {
+      "cssModules": false,
       "tailwindDirectives": true
+    },
+    "formatter": {
+      "enabled": true
     }
   },
   "linter": {
@@ -41,7 +46,6 @@
       "recommended": true,
       "correctness": {
         "noUnusedImports": "error",
-        "useUniqueElementIds": "warn",
         "useImportExtensions": "off"
       },
       "style": {
@@ -74,12 +78,7 @@
     "enabled": true,
     "actions": {
       "source": {
-        "organizeImports": {
-          "level": "on",
-          "options": {
-            "groups": [":URL:", ":PACKAGE_WITH_PROTOCOL:", ":NODE:", ":PACKAGE:", ":ALIAS:", ":PATH:", ":RELATIVE:"]
-          }
-        }
+        "organizeImports": "on"
       }
     }
   },
@@ -91,9 +90,6 @@
       },
       "formatter": {
         "enabled": false
-      },
-      "assist": {
-        "enabled": false
       }
     },
     {
@@ -102,16 +98,6 @@
         "rules": {
           "suspicious": {
             "noExplicitAny": "off"
-          }
-        }
-      }
-    },
-    {
-      "includes": ["**/*.css"],
-      "linter": {
-        "rules": {
-          "suspicious": {
-            "noUnknownAtRules": "off"
           }
         }
       }

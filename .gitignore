@@ -81,7 +81,6 @@ tsconfig.tsbuildinfo
 # ===========================
 # Bun
 .bun/
-bun.lock
 
 # Yarn
 .yarn/cache

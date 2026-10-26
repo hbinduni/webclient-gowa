@@ -27,7 +27,7 @@ jobs:
         with:
           bun-version: '1.4.4'
       - name: Validate dependency lockfile
-        run: bun install --frozen-lockfile --ignore-scripts
+        run: bun --no-env-file install --frozen-lockfile --ignore-scripts
       - name: Audit all locked dependencies
         if: ${{ !cancelled() }}
-        run: bun audit
+        run: bun --no-env-file audit
